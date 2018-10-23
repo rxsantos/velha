@@ -11,6 +11,7 @@
 
 def Ftabuleiro():   #Exibe o tabuleiro atual
     print("A seguir, o tabuleiro atualizado.\n")
+    c = 1
     for linha in tabuleiro:
         for i in linha:
             print(i,end='  ')
@@ -71,32 +72,33 @@ def Fjogador1(jogador):
     Flinha()
 
     #Verifica se o número digitado está entre as posições possíveis
-    while resp > 1 and resp > 9:
+    while resp < 1 or resp > 9:
         resp = int(input("{}, somente posições entre 1 a 9. ".format(jogador)))
-
+        Ftabuleiro()
 
     #Marca "X" na posição digitada caso a mesma esteja vazia
     if resp in range(1,10):
-        if resp == 1 and tabuleiro[0][0] == 0:
+        if resp == 1 and tabuleiro[0][0] == 1:
             tabuleiro[0][0] = "X"
-        elif resp == 2 and tabuleiro[0][1] == 0:
+        elif resp == 2 and tabuleiro[0][1] == 2:
             tabuleiro[0][1] = "X"
-        elif resp == 3 and tabuleiro[0][2] == 0:
+        elif resp == 3 and tabuleiro[0][2] == 3:
             tabuleiro[0][2] = "X"
-        elif resp == 4 and tabuleiro[1][0] == 0:
+        elif resp == 4 and tabuleiro[1][0] == 4:
             tabuleiro[1][0] = "X"
-        elif resp == 5 and tabuleiro[1][1] == 0:
+        elif resp == 5 and tabuleiro[1][1] == 5:
             tabuleiro[1][1] = "X"
-        elif resp == 6 and tabuleiro[1][2] == 0:
+        elif resp == 6 and tabuleiro[1][2] == 6:
             tabuleiro[1][2] = "X"
-        elif resp == 7 and tabuleiro[2][0] == 0:
+        elif resp == 7 and tabuleiro[2][0] == 7:
             tabuleiro[2][0] = "X"
-        elif resp == 8 and tabuleiro[2][1] == 0:
+        elif resp == 8 and tabuleiro[2][1] == 8:
             tabuleiro[2][1] = "X"
-        elif resp == 9 and tabuleiro[2][2] == 0:
+        elif resp == 9 and tabuleiro[2][2] == 9:
             tabuleiro[2][2] = "X"
         else:
             Fposicao(jogador)
+            Ftabuleiro()
             Fjogador1(jogador)
     Ftabuleiro()
     Flinha()
@@ -108,31 +110,32 @@ def Fjogador2(jogador):
     Flinha()
 
     #Verifica se o número digitado está entre as posições possíveis
-    while resp > 1 and resp > 9:
+    while resp < 1 or resp > 9:
         resp = int(input("{}, somente posições entre 1 a 9. ".format(jogador)))
-
+        Ftabuleiro()
     #Marca "O" na posição digitada caso a mesma esteja vazia
     if resp in range(1,10):
-        if resp == 1 and tabuleiro[0][0] == 0:
+        if resp == 1 and tabuleiro[0][0] == 1:
             tabuleiro[0][0] = "O"
-        elif resp == 2 and tabuleiro[0][1] == 0:
+        elif resp == 2 and tabuleiro[0][1] == 2:
             tabuleiro[0][1] = "O"
-        elif resp == 3 and tabuleiro[0][2] == 0:
+        elif resp == 3 and tabuleiro[0][2] == 3:
             tabuleiro[0][2] = "O"
-        elif resp == 4 and tabuleiro[1][0] == 0:
+        elif resp == 4 and tabuleiro[1][0] == 4:
             tabuleiro[1][0] = "O"
-        elif resp == 5 and tabuleiro[1][1] == 0:
+        elif resp == 5 and tabuleiro[1][1] == 5:
             tabuleiro[1][1] = "O"
-        elif resp == 6 and tabuleiro[1][2] == 0:
+        elif resp == 6 and tabuleiro[1][2] == 6:
             tabuleiro[1][2] = "O"
-        elif resp == 7 and tabuleiro[2][0] == 0:
+        elif resp == 7 and tabuleiro[2][0] == 7:
             tabuleiro[2][0] = "O"
-        elif resp == 8 and tabuleiro[2][1] == 0:
+        elif resp == 8 and tabuleiro[2][1] == 8:
             tabuleiro[2][1] = "O"
-        elif resp == 9 and tabuleiro[2][2] == 0:
+        elif resp == 9 and tabuleiro[2][2] == 9:
             tabuleiro[2][2] = "O"
         else:
             Fposicao(jogador)
+            Ftabuleiro()
             Fjogador2(jogador)
     Ftabuleiro()
     Flinha()
@@ -140,24 +143,26 @@ def Fjogador2(jogador):
 
 
 #DEFINIÇÕES
-tabuleiro = [[0,0,0],[0,0,0],[0,0,0]]
+tabuleiro = [[1,2,3],[4,5,6],[7,8,0]]
 cond = "sim"
 
 #CÓDIGO
 while cond != "nao":
     resp = -1
-    tabuleiro = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+    tabuleiro = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     while resp != 0:
         print("Bem vindo ao Jogo da Velha.")
-        print("Vamos começar?")
+        print("Vamos começar?\n")
 
         jogador1 = input('JOGADOR 01, Digite seu nome: ')
         jogador2 = input('JOGADOR 02, Digite seu nome: ')
 
+        '''
         print("A seguir, o mapa de posições do tabuleiro.\n")
         print("[ 1 2 3 ]")
         print("[ 4 5 6 ]")
         print("[ 7 8 9 ]")
+        '''
         Ftabuleiro()
         cont = 0
         for c in range(5):
