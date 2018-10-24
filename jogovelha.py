@@ -156,13 +156,6 @@ while cond != "nao":
 
         jogador1 = input('JOGADOR 01, Digite seu nome: ')
         jogador2 = input('JOGADOR 02, Digite seu nome: ')
-
-        '''
-        print("A seguir, o mapa de posições do tabuleiro.\n")
-        print("[ 1 2 3 ]")
-        print("[ 4 5 6 ]")
-        print("[ 7 8 9 ]")
-        '''
         Ftabuleiro()
         cont = 0
         for c in range(5):
