@@ -11,7 +11,6 @@
 
 def Ftabuleiro():   #Exibe o tabuleiro atual
     print("A seguir, o tabuleiro atualizado.\n")
-    c = 1
     for linha in tabuleiro:
         for i in linha:
             print(i,end='  ')
